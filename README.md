@@ -164,6 +164,6 @@ I don't know what to do, I feel lost and confused.
 
 ---
 
-## 📄 License
+## License
 
 This project is submitted as part of the BYOP (Bring Your Own Project) assignment for academic purposes.
