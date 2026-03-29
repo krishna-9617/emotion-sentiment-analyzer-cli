@@ -43,7 +43,7 @@ emotion-sentiment-analyzer/
 
 ---
 
-##  Setup & Installation
+## Setup & Installation
 
 ### 1. Clone the repository
 
@@ -79,8 +79,8 @@ When you run the program, a menu appears:
 4. exit
 ```
 
-**Step 1** → Select option `1`  
-**Step 2** → Type any sentence, for example:
+**Step 1** -> Select option `1`  
+**Step 2** -> Type any sentence, for example:
 
 ```
 I am so happy today but also a little scared about tomorrow
@@ -103,7 +103,7 @@ Two bar graphs will also pop up — one for emotions, one for sentiment.
 
 ---
 
-## 🧪 Example Inputs to Try
+## Example Inputs to Try
 
 ```
 I feel devastated and hopeless after what happened.
@@ -117,7 +117,7 @@ I don't know what to do, I feel lost and confused.
 
 ---
 
-##  How It Works
+## How It Works
 
 ### Emotion Detection
 - Input text is cleaned (lowercased, punctuation removed)
@@ -160,7 +160,7 @@ I don't know what to do, I feel lost and confused.
 **Registration No:** 25BCE10430  
 **Branch:** B.Tech CSE (Core)  
 **University:** VIT Bhopal University  
-**Course:** CSA2001 — Fundamentals of AI and ML
+**Course:** CSA2001 - Fundamentals of AI and ML
 
 ---
 
