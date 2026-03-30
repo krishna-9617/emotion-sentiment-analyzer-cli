@@ -1,17 +1,16 @@
 # Emotion & Sentiment Analyzer
-
-A CLI-based AI tool that analyzes the **emotions** and **sentiment** hidden in any text you type — built using Python, NLP, and Machine Learning.
+So basically this is a CLI tool I made that takes any text you type and tries to figure out what emotions and sentiment are in it. It uses Python, some NLP stuff, and a basic ML model under the hood.
 
 ---
 
 ## What It Does
 
-You type a sentence. The tool tells you:
-- What **emotions** are present (happy, angry, fearful, sad, etc.)
-- What **sentiment** it carries (positive, negative, neutral)
-- Shows **bar graphs** for both — so you can actually see the results
+You just type a sentence and the tool tells you:
+- What **emotions** are there — like happy, angry, sad, fearful, etc.
+- What **sentiment** it has — positive, negative, or neutral
+- And it also shows **bar graphs** for both, so you can actually see it visually
 
-No internet needed. Runs fully in the terminal.
+No internet needed at all. The whole thing runs in the terminal.
 
 ---
 
@@ -46,31 +45,28 @@ emotion-sentiment-analyzer/
 ## Setup & Installation
 
 ### 1. Clone the repository
-
 ```bash
 git clone https://github.com/your-username/emotion-sentiment-analyzer.git
 cd emotion-sentiment-analyzer
 ```
 
 ### 2. Install dependencies
-
 ```bash
 pip install matplotlib scikit-learn joblib
 ```
 
 ### 3. Run the program
-
 ```bash
 python main.py
 ```
 
-> **Note:** On first run, the ML model trains automatically from `combined_sentiment_data.csv` and saves as `model.pkl`. Subsequent runs load instantly from cache.
+> **Note:** First time you run it, the model trains itself from `combined_sentiment_data.csv` and saves as `model.pkl`. After that it just loads from cache, so it's pretty fast.
 
 ---
 
 ## How to Use
 
-When you run the program, a menu appears:
+When you run it, a simple menu comes up:
 
 ```
 1. Enter text and check
@@ -79,27 +75,23 @@ When you run the program, a menu appears:
 4. exit
 ```
 
-**Step 1** -> Select option `1`  
-**Step 2** -> Type any sentence, for example:
+**Step 1** → Pick option `1`  
+**Step 2** → Type whatever sentence you want, like:
 
 ```
 I am so happy today but also a little scared about tomorrow
 ```
 
 **Output:**
-
 ```
 =====EMOTIONS PERCENTAGE=====
-
 percentage of happy: 50.0%
 percentage of fearful: 50.0%
-
 =====SENTIMENTS PERCENTAGE=====
-
 percentage of positive: 100.0%
 ```
 
-Two bar graphs will also pop up — one for emotions, one for sentiment.
+Two bar graphs will pop up too — one showing emotions, one showing sentiment.
 
 ---
 
@@ -120,37 +112,41 @@ I don't know what to do, I feel lost and confused.
 ## How It Works
 
 ### Emotion Detection
-- Input text is cleaned (lowercased, punctuation removed)
-- Stop words are filtered out
-- Remaining words are matched against `emotions.txt` — a dictionary of 300+ words mapped to emotions
-- A `Counter` tracks how many words matched each emotion
+- First the input gets cleaned — lowercased, punctuation removed
+- Stop words are filtered out (basically words like "the", "is", "a" that don't really mean anything useful)
+- The remaining words are matched against `emotions.txt` which is kind of a dictionary with 300+ words, each mapped to an emotion
+- A `Counter` keeps track of how many words matched each emotion
 
 ### Sentiment Analysis
-- Cleaned words are joined back into a string
-- `CountVectorizer` converts text to a feature vector
-- `MultinomialNB` (Naive Bayes) predicts: **positive**, **negative**, or **neutral**
-- Model is trained on `combined_sentiment_data.csv` and cached with `joblib`
+- The cleaned words get joined back into a string
+- `CountVectorizer` turns that into a feature vector
+- Then `MultinomialNB` (Naive Bayes) predicts if it's **positive**, **negative**, or **neutral**
+- The model is trained on `combined_sentiment_data.csv` and saved using `joblib` so it doesn't retrain every single time
 
 ### Visualization
-- `matplotlib` generates bar charts for emotion distribution and sentiment distribution
+- `matplotlib` just draws bar charts — one for emotions, one for sentiment
 
 ---
 
 ## Limitations
 
-- Emotion detection is dictionary-based — works best on direct/clear language
-- Model accuracy depends on the quality and balance of training CSV data
-- Multi-word phrases (e.g., "in a huff") may not match correctly after tokenization
-- Does not support non-English text
+Honestly there are a few things this tool doesn't handle that well:
+
+- Since emotion detection is dictionary-based, it works fine for simple clear sentences but might miss sarcasm or indirect language
+- The sentiment model's accuracy kind of depends on how good and balanced the training data is
+- Multi-word phrases like "in a huff" probably won't get detected properly after tokenization breaks them up
+- Non-English text won't work at all
 
 ---
 
 ## Real-World Applications
 
-- Mental health journaling tools
-- Customer feedback analysis
-- Social media sentiment monitoring
-- Educational NLP demos
+Even with the limitations, I think this kind of tool could actually be useful for things like:
+
+- Mental health journaling apps
+- Analyzing customer feedback
+- Social media sentiment tracking
+- Just learning how NLP works in general
 
 ---
 
@@ -166,4 +162,4 @@ I don't know what to do, I feel lost and confused.
 
 ## License
 
-This project is submitted as part of the BYOP (Bring Your Own Project) assignment for academic purposes.
+This project was made for the BYOP (Bring Your Own Project) assignment as part of my academics.
